@@ -14,8 +14,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "build"
+          command: npm run lint 
 
 
   test:
@@ -23,16 +23,16 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "test"
+          command: npm run test
 
   analyze:
     <<: *defaults
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "analyze"
+          command: npm audit
 
 workflows:
   CI-PipeLine:
